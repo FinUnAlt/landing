@@ -1,0 +1,105 @@
+:root {
+    --teal: #075e60;
+    --deep: #063e43;
+    --ink: #153c3e;
+    --muted: #486366;
+    --line: #cbdedb;
+    --mint: #eff7f4;
+    --orange: #ff9969;
+    font: 16px/1.55 Arial, sans-serif;
+    color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+html { scroll-padding-top: 5.5rem; }
+body:has(dialog[open]) { overflow: hidden; }
+button { font: inherit; cursor: pointer; }
+a { color: var(--teal); text-underline-offset: .2em; }
+:focus-visible { outline: 3px solid #d05b18; outline-offset: 4px; }
+.container { width: min(1160px, 92%); margin-inline: auto; }
+section { padding-block: clamp(3rem, 7vw, 6rem); }
+h1, h2, h3, h4 { margin: 0; line-height: 1.14; text-wrap: balance; }
+h2 { font-size: clamp(2rem, 4vw, 3.1rem); letter-spacing: -.045em; margin-bottom: 1.8rem; }
+h3 { font-size: clamp(1.25rem, 2vw, 1.6rem); }
+p { margin: .65rem 0 1rem; }
+header { position: sticky; top: 0; z-index: 5; }
+.navbar, .footer { background: var(--deep); color: white; }
+.navbar .container, .nav-links, .social-links, .footer-social, .reviews-nav { display: flex; align-items: center; gap: 1rem; }
+.navbar .container { justify-content: space-between; min-height: 4.5rem; }
+.logo img, .footer-logo img { width: auto; height: 2.6rem; max-width: 35vw; object-fit: contain; display: block; }
+.nav-links a, .footer a { color: white; }
+.nav-links a { text-decoration: none; font-weight: 600; }
+.nav-links a:hover, .footer a:hover { text-decoration: underline; }
+.nav-links .btn-cta, .cta-button, .call-button { display: inline-block; border-radius: 2rem; background: var(--orange); color: #302015; font-weight: 700; padding: .75rem 1.35rem; text-decoration: none; }
+.cta-button:hover, .call-button:hover, .btn-cta:hover { background: #ffaf87; }
+.hamburger { display: none; }
+.hero-section { color: white; background: linear-gradient(95deg, rgba(3,55,59,.97), rgba(5,73,75,.78) 56%, rgba(5,73,75,.47)), url('assets/sprite_roo.jpg') center/cover; padding-block: clamp(4rem, 9vw, 8rem); }
+.hero-content { max-width: 42rem; }
+.hero-kicker { font-weight: 600; margin: 0 0 1.25rem; }
+.hero-content h1 { font-size: clamp(3rem, 7vw, 6.3rem); letter-spacing: -.06em; line-height: .99; }
+.hero-content h1 + p { max-width: 36rem; margin: 1.5rem 0 2rem; font-size: 1.2rem; }
+.concept-grid, .advantages-grid, .courses-grid, .contacts-grid, .footer-content { display: grid; gap: 1rem; }
+.concept-grid, .advantages-grid { grid-template-columns: repeat(3, 1fr); }
+.concept-item, .advantage-item, .course-card, .wide-card, .contact-form { border: 1px solid var(--line); border-radius: 1.2rem; padding: clamp(1.2rem, 2.5vw, 2rem); }
+.concept-item i, .advantage-item i, .course-card i { font-size: 1.45rem; margin-bottom: 1.2rem; color: var(--teal); }
+.concept-item p, .advantage-item p, .wide-card p { margin-bottom: 0; }
+.advantages-section, .reviews-section { background: var(--teal); color: white; }
+.advantage-item, .review-slide { background: #105456; border-color: #518184; }
+.advantage-item i { color: var(--orange); }
+.courses-section, .contacts-section { background: var(--mint); }
+.course-category { margin: 2.5rem 0; }
+.course-category > p, .course-card p { color: var(--muted); }
+.courses-grid { grid-template-columns: repeat(4, 1fr); }
+.course-card { background: white; display: flex; flex-direction: column; align-items: flex-start; padding: 1.35rem; }
+.course-card h4 { font-size: 1.2rem; }
+.course-card p { margin-bottom: 1.5rem; }
+.course-link { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; color: var(--teal); font-weight: bold; background: none; border: 0; text-decoration: underline; text-underline-offset: .3rem; padding: 0; margin-top: auto; }
+.course-link:hover { color: var(--deep); }
+.wide-card { background: white; display: flex; align-items: center; justify-content: space-between; gap: 2rem; margin: 1rem 0; }
+.wide-card > div { max-width: 47rem; }
+.wide-card .course-link { flex: none; margin: 0; }
+.subjects { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 0; }
+.subjects li { background: var(--mint); border-radius: 2em; padding: .25em .8em; }
+.reviews-slider { display: flex; align-items: flex-start; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1rem; position: relative; }
+.review-slide { flex: 0 0 calc(50% - .5rem); scroll-snap-align: start; border-radius: 1.2rem; padding: 1.5rem; }
+.review-text { margin: 0; }
+.reviews-nav { justify-content: flex-end; margin-top: 1rem; }
+.reviews-nav button, .scroll-to-top, .close-modal { border-radius: 50%; border: 0; width: 44px; height: 44px; color: var(--deep); background: white; font-size: 1.2rem; }
+.faq-grid { max-width: 55rem; }
+details { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; padding: 1.1rem .1rem; font-size: 1.15rem; font-weight: 700; }
+details p { margin: 0 0 1.25rem; }
+.contacts-grid { grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start; }
+.contact-item { display: flex; gap: .8rem; align-items: baseline; margin-bottom: .6rem; }
+.contact-item p { margin: 0; }
+.social-link { display: inline-grid; place-items: center; min-width: 44px; height: 44px; font-weight: bold; }
+.map iframe { width: 100%; height: 15rem; margin-top: 1rem; border-radius: 1rem; }
+.contact-form { background: white; scroll-margin-top: 1rem; }
+.contact-form h2 { font-size: 2rem; margin-bottom: 1rem; }
+.footer { padding: 3rem 0 1rem; }
+.footer-content { grid-template-columns: 2fr 1fr 1.5fr; }
+.footer-links ul { list-style: none; padding: 0; }
+.footer-bottom { border-top: 1px solid #457175; margin-top: 1rem; padding-top: .5rem; }
+dialog { width: min(38rem, 92vw); max-height: 82dvh; padding: 2rem; color: var(--ink); border: 0; border-radius: 1.25rem; }
+dialog::backdrop { background: #082f34b8; }
+dialog h2 { font-size: 2rem; margin: 1rem 0; }
+dialog img { object-fit: cover; border-radius: .75rem; }
+.close-modal { float: right; background: var(--mint); font-size: 1.7rem; }
+.scroll-to-top { position: fixed; bottom: 1rem; right: 1rem; text-align: center; line-height: 44px; background: var(--deep); color: white; text-decoration: none; box-shadow: 0 2px 12px #0003; }
+@media (max-width: 900px) { .courses-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 800px) {
+    .navbar .container { min-height: 4rem; }
+    .hamburger { display: grid; align-content: center; gap: 5px; width: 44px; height: 44px; background: none; border: 0; }
+    .bar { height: 2px; width: 25px; background: white; }
+    .nav-links { display: none; position: absolute; top: 100%; inset-inline: 0; background: var(--deep); padding: 1rem 4%; max-height: 80dvh; overflow-y: auto; }
+    .nav-links.active { display: grid; gap: .1rem; }
+    .nav-links a { padding: .65rem; }
+    .concept-grid, .advantages-grid, .contacts-grid, .footer-content { grid-template-columns: 1fr; }
+    .wide-card { display: grid; gap: .8rem; }
+    .review-slide { flex-basis: 100%; }
+}
+@media (max-width: 520px) {
+    .courses-grid { grid-template-columns: 1fr; }
+    .hero-content h1 + p { font-size: 1.05rem; }
+    .contact-form, dialog { padding: 1.2rem; }
+}
